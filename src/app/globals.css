@@ -81,14 +81,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-shadow: 0 0 8px var(--background), 0 0 16px var(--background);
-}
-
 /* ─── Glass Morphism ───────────────────────────────────────── */
 .glass {
   background: rgba(18, 18, 23, 0.75);
