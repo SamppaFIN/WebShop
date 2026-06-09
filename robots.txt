@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /checkout
+Disallow: /orders
+Disallow: /account
+
+Sitemap: https://samppafin.github.io/WebShop/sitemap.xml

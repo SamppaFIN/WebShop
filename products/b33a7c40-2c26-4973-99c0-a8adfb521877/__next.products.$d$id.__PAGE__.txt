@@ -1,0 +1,9 @@
+1:"$Sreact.fragment"
+2:I[47257,["/WebShop/_next/static/chunks/2jre39fpqdc9b.js","/WebShop/_next/static/chunks/1au20y4-d2ex5.js","/WebShop/_next/static/chunks/09vbv7-tpcsib.js","/WebShop/_next/static/chunks/1ad53m73qynlp.js","/WebShop/_next/static/chunks/14mrh2-p_w84d.js"],"ClientPageRoot"]
+3:I[66782,["/WebShop/_next/static/chunks/2jre39fpqdc9b.js","/WebShop/_next/static/chunks/1au20y4-d2ex5.js","/WebShop/_next/static/chunks/09vbv7-tpcsib.js","/WebShop/_next/static/chunks/1ad53m73qynlp.js","/WebShop/_next/static/chunks/14mrh2-p_w84d.js","/WebShop/_next/static/chunks/34y9k03et7jvr.js","/WebShop/_next/static/chunks/05yqxcrsakeeh.js"],"default"]
+6:I[97367,["/WebShop/_next/static/chunks/2jre39fpqdc9b.js","/WebShop/_next/static/chunks/1au20y4-d2ex5.js","/WebShop/_next/static/chunks/09vbv7-tpcsib.js","/WebShop/_next/static/chunks/1ad53m73qynlp.js","/WebShop/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{"id":"b33a7c40-2c26-4973-99c0-a8adfb521877"},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/WebShop/_next/static/chunks/34y9k03et7jvr.js","async":true}],["$","script","script-1",{"src":"/WebShop/_next/static/chunks/05yqxcrsakeeh.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"pUbs_6K06yVyx_mWGxb18"}
+4:{}
+5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
+8:null

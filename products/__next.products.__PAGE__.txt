@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:"$Sreact.suspense"
+3:I[27302,["/WebShop/_next/static/chunks/2jre39fpqdc9b.js","/WebShop/_next/static/chunks/1au20y4-d2ex5.js","/WebShop/_next/static/chunks/09vbv7-tpcsib.js","/WebShop/_next/static/chunks/1ad53m73qynlp.js","/WebShop/_next/static/chunks/14mrh2-p_w84d.js","/WebShop/_next/static/chunks/2q1bd1jubw618.js","/WebShop/_next/static/chunks/05yqxcrsakeeh.js"],"default"]
+4:I[97367,["/WebShop/_next/static/chunks/2jre39fpqdc9b.js","/WebShop/_next/static/chunks/1au20y4-d2ex5.js","/WebShop/_next/static/chunks/09vbv7-tpcsib.js","/WebShop/_next/static/chunks/1ad53m73qynlp.js","/WebShop/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+0:{"rsc":["$","$1","c",{"children":[["$","$2",null,{"fallback":["$","div",null,{"className":"py-32 text-center text-muted-foreground","children":"Ladataan..."}],"children":["$","$L3",null,{}]}],[["$","script","script-0",{"src":"/WebShop/_next/static/chunks/2q1bd1jubw618.js","async":true}],["$","script","script-1",{"src":"/WebShop/_next/static/chunks/05yqxcrsakeeh.js","async":true}]],["$","$L4",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"pUbs_6K06yVyx_mWGxb18"}
+5:null
