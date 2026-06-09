@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <Navbar />
           <CartDrawer />
-          <main className="flex-1 relative z-10 bg-background/80 backdrop-blur-sm">{children}</main>
+          <main className="flex-1 relative z-10 bg-background/60 backdrop-blur-sm">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
