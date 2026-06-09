@@ -1,26 +1,34 @@
-﻿import { notFound } from "next/navigation"
+﻿"use client"
+
+import { useEffect, useState } from "react"
+import { useParams } from "next/navigation"
 import Link from "next/link"
-import type { Metadata } from "next"
 import { getProductById, searchProducts } from "@/lib/api/products"
 import { AddToCartButton } from "@/components/product/AddToCartButton"
 import { ProductImage } from "@/components/product/ProductImage"
 import { Badge } from "@/components/ui/badge"
 import { ProductCard } from "@/components/product/ProductCard"
+import type { Product } from "@/types"
 
-interface Props { params: Promise<{ id: string }> }
+export default function ProductDetailPage() {
+  const { id } = useParams<{ id: string }>()
+  const [product, setProduct] = useState<Product | null>(null)
+  const [similar, setSimilar] = useState<Product[]>([])
+  const [loading, setLoading] = useState(true)
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const product = await getProductById((await params).id)
-  if (!product) return { title: "Tuotetta ei löydy" }
-  return { title: product.title, description: product.description?.slice(0, 160) }
-}
+  useEffect(() => {
+    if (!id) return
+    getProductById(id).then(p => {
+      setProduct(p)
+      if (p?.category) {
+        searchProducts(p.category, 5).then(r => setSimilar(r.filter(x => x.id !== p.id).slice(0, 4)))
+      }
+    }).finally(() => setLoading(false))
+  }, [id])
 
-export default async function ProductDetailPage({ params }: Props) {
-  const product = await getProductById((await params).id)
-  if (!product) notFound()
+  if (loading) return <div className="py-32 text-center text-muted-foreground">Ladataan...</div>
+  if (!product) return <div className="py-32 text-center"><p className="text-xl text-muted-foreground">Tuotetta ei löydy</p><Link href="/products" className="text-accent hover:underline">← Takaisin tuotteisiin</Link></div>
 
-  const related = await searchProducts(product.category ?? "", 4).catch(() => [])
-  const similar = related.filter(p => p.id !== product.id).slice(0, 4)
   const price = new Intl.NumberFormat("fi-FI", { style: "currency", currency: "EUR" }).format(product.price)
 
   return (

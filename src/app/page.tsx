@@ -1,19 +1,25 @@
+"use client"
+
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { getProducts, getCategories } from "@/lib/api/products"
 import { ProductCard } from "@/components/product/ProductCard"
-import { Button } from "@/components/ui/button"
+import type { Product } from "@/types"
 
-export default async function HomePage() {
-  let products = [] as Awaited<ReturnType<typeof getProducts>>["data"]
-  let categories = [] as string[]
+export default function HomePage() {
+  const [products, setProducts] = useState<Product[]>([])
+  const [categories, setCategories] = useState<string[]>([])
+  const [loading, setLoading] = useState(true)
 
-  try {
-    const result = await getProducts({ limit: 4, sort: "newest", available: true })
-    products = result.data
-    categories = await getCategories()
-  } catch {
-    // Products will be empty, showing skeleton state via client component
-  }
+  useEffect(() => {
+    Promise.all([
+      getProducts({ limit: 4, sort: "newest", available: true }),
+      getCategories(),
+    ]).then(([productResult, cats]) => {
+      setProducts(productResult.data)
+      setCategories(cats)
+    }).catch(() => {}).finally(() => setLoading(false))
+  }, [])
 
   return (
     <div className="flex flex-col">
@@ -47,7 +53,11 @@ export default async function HomePage() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Suosituimmat tuotteet</h2>
           <p className="text-muted-foreground mb-10">Viimeisimmät lisäykset valikoimaamme</p>
 
-          {products.length > 0 ? (
+          {loading ? (
+            <div className="text-center py-20 text-muted-foreground">
+              <p className="text-lg">Ladataan...</p>
+            </div>
+          ) : products.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {products.map((product) => (
                 <ProductCard key={product.id} product={product} />
